@@ -1,0 +1,16 @@
+import os
+import signal
+
+ListOfTasks = [] #put your PID (process identification number) here to clear all unwanted applications upon running this script 
+
+def Terminate_processes(Args):
+    for tasks in Args:
+        try:
+            os.kill(tasks, signal.SIGTERM)
+            print(f'task closed {tasks} successfully')
+
+        except OSError:
+            print(f'failed to close {tasks}')
+
+
+Terminate_processes(ListOfTasks)
