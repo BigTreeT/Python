@@ -1,0 +1,28 @@
+import random
+
+#pick heads if you want to be right lol
+def coinflip():
+    Flip = random.randint(1, 2)
+    if Flip == 1:
+        return 'heads'
+    else:
+        return 'tails'
+
+first_flip = input('Please type f to flip the coin: ').lower()
+
+if first_flip == 'f':
+    print(f'coin flip result was...' + coinflip())
+
+
+second_roll = input('did the coinflip go your way?: ').lower()
+if second_roll == 'no':
+    print(f'A strong gust of wind blows the coin over... IT STARTED SPINNING AGAIN' + 'it landed on... ' + coinflip())
+
+
+
+Flips = []
+for flip in range(2):
+    Flips.append(coinflip())
+
+if all(flip == 'heads' for flip in Flips):
+    print('this game is clearly rigged lets go flip a coin in real life')
